@@ -1,0 +1,135 @@
+.table-group-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent-deep);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 5px solid var(--accent-deep);
+}
+
+.table-sub-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-deep);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.table-note {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    background: #ffffff;
+    padding: 15px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+    border: 1px dashed var(--accent-soft);
+}
+
+.table-card {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    margin-bottom: 20px;
+}
+
+.disclosure-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    font-size: 0.95rem;
+}
+
+.disclosure-table th {
+    background: var(--accent-deep);
+    color: #ffffff;
+    text-align: left;
+    padding: 18px 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+}
+
+.disclosure-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    color: var(--primary-text);
+}
+
+.disclosure-table tr:nth-child(even) {
+    background: #fafafb;
+}
+
+.disclosure-table tr:hover {
+    background: #f9fafb;
+}
+
+.btn-view {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--accent);
+    color: #ffffff;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.btn-view:hover {
+    color: #ffffff;
+}
+
+.disclosure-card {
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.text-books {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-deep);
+    letter-spacing: 0.1em;
+}
+
+/* Shared page title styles */
+.page-title-section {
+    padding: 60px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: var(--radius-lg);
+    background: #ffffff;
+    border: 1px solid var(--accent-soft);
+}
+
+.page-title {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--accent-deep);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--accent-deep);
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+
+    .disclosure-table th,
+    .disclosure-table td {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+    }
+
+    .table-group-title {
+        font-size: 1.2rem;
+    }
+}
+
+.reveal-table {
+    margin-bottom: 40px;
+}

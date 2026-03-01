@@ -1,0 +1,140 @@
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.vm-card {
+    padding: 50px 40px;
+    text-align: center;
+    border-radius: var(--radius-lg);
+    background: #ffffff;
+    border: 1px solid var(--border-soft);
+}
+
+.vm-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
+    background: var(--accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vm-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: var(--accent-deep);
+    stroke-width: 2;
+}
+
+.vm-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-deep);
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.vm-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--primary-text);
+}
+
+.vm-text strong {
+    color: var(--accent-deep);
+    font-style: italic;
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Quote Section */
+.quote-card {
+    padding: 60px;
+    text-align: center;
+    border-radius: var(--radius-xl);
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.quote-icon {
+    font-size: 8rem;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    color: var(--accent);
+    opacity: 0.5;
+    font-family: serif;
+    line-height: 1;
+}
+
+.quote-text {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--primary-text);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-author {
+    font-weight: 700;
+    color: var(--accent-deep);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .vm-card {
+        padding: 30px 20px;
+    }
+
+    .quote-card {
+        padding: 40px 20px;
+    }
+
+    .quote-text {
+        font-size: 1.4rem;
+    }
+}
+
+/* Shared page title styles */
+.page-title-section {
+    padding: 60px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: var(--radius-lg);
+    background: #ffffff;
+    border: 1px solid var(--accent-soft);
+}
+
+.page-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: var(--accent-deep);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--accent-deep);
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto;
+}
