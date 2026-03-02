@@ -1,0 +1,230 @@
+/* ============================================
+   Achievements Page – achievements.css
+   ============================================ */
+
+/* ---- Page Hero Banner ---- */
+.page-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #00171F 0%, #075892 60%, #0a2540 100%);
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 80% 50%, rgba(251, 39, 24, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 30%, rgba(7, 88, 146, 0.3) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animated grid lines */
+.page-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 1;
+    animation: gridDrift 12s linear infinite;
+}
+
+@keyframes gridDrift {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 60px 60px;
+    }
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 0 70px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.breadcrumb span {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.breadcrumb-sep {
+    color: rgba(255, 255, 255, 0.35);
+    font-weight: 300 !important;
+}
+
+/* Hero Title */
+.page-hero-title {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.page-hero-title span {
+    color: var(--accent);
+}
+
+.page-hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 26px;
+}
+
+/* Meta chips */
+.page-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.82rem;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+}
+
+.meta-chip svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+/* ---- Section Alternator ---- */
+.section-alt {
+    background: rgba(251, 39, 24, 0.03);
+    border-top: 1px solid rgba(251, 39, 24, 0.08);
+    border-bottom: 1px solid rgba(251, 39, 24, 0.08);
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
+    margin: 20px 0 40px;
+    background: #ffffff;
+    box-shadow: var(--shadow-soft);
+}
+
+.achievement-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.achievement-table th,
+.achievement-table td {
+    padding: 18px 20px;
+    text-align: left;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.95rem;
+}
+
+.achievement-table th {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.achievement-table tr:hover {
+    background: rgba(251, 39, 24, 0.02);
+}
+
+/* Year Highlights */
+.years-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.year-chip {
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    background: #ffffff;
+    border: 1px solid var(--accent-soft);
+    color: var(--accent-deep);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Related card icons */
+.related-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--accent-deep);
+    stroke-width: 1.5;
+    fill: none;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .related-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .page-hero-title {
+        font-size: 2.2rem;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

@@ -150,9 +150,7 @@ ul {
   transition: none;
 }
 
-.pill-primary:hover {
-  /* removed hover styles */
-}
+
 
 .pill-outline {
   border-color: var(--accent);
@@ -384,20 +382,27 @@ ul {
 }
 
 .hero-slide.active .slide-caption {
-  animation: slideTextEntry 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideTextEntry 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  perspective: 1000px;
 }
 
 @keyframes slideTextEntry {
   0% {
     opacity: 0;
-    transform: translate(-50%, -20%);
+    transform: translate(-50%, -30%) scale(0.9) rotateX(-30deg);
     filter: blur(10px);
+    letter-spacing: 0.3em;
+  }
+
+  60% {
+    opacity: 0.8;
   }
 
   100% {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1) rotateX(0);
     filter: blur(0);
+    letter-spacing: -0.01em;
   }
 }
 
@@ -422,9 +427,7 @@ ul {
   transition: all 0.3s ease;
 }
 
-.slider-btn:hover {
-  /* removed hover styles */
-}
+
 
 .slider-btn svg {
   width: 32px;
@@ -547,13 +550,9 @@ ul {
   display: none;
 }
 
-.btn-primary:hover {
-  /* removed hover styles */
-}
 
-.btn-primary:hover .btn-glow {
-  display: none;
-}
+
+
 
 .btn-ghost {
   background: rgba(243, 244, 246, 0.9);
@@ -561,17 +560,13 @@ ul {
   color: #374151;
 }
 
-.btn-ghost:hover {
-  /* removed hover styles */
-}
+
 
 .neon-border {
   box-shadow: 0 0 0 1px rgba(255, 140, 58, 0.5);
 }
 
-.stat-card:hover {
-  /* removed hover styles */
-}
+
 
 .hero-phones {
   font-size: 0.86rem;
@@ -1154,10 +1149,68 @@ ul {
   }
 }
 
-.neon-hover:hover {
-  box-shadow: none;
+
+/* Glossy Shimmer Hover Effect */
+.btn,
+.card,
+.infra-card,
+.stat-card,
+.nav-links a,
+.hero-slide img,
+.logo-image {
+  position: relative;
+  overflow: hidden;
 }
 
-.neon-text {
-  text-shadow: none;
+/* Shimmer overlay */
+.btn::after,
+.card::after,
+.infra-card::after,
+.stat-card::after,
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -200%;
+  width: 60%;
+  height: 300%;
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: rotate(35deg);
+  transition: none;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.btn:hover::after,
+.card:hover::after,
+.infra-card:hover::after,
+.stat-card:hover::after,
+.nav-links a:hover::after {
+  left: 150%;
+  top: 150%;
+  transition: all 1.5s ease-in-out;
+}
+
+/* Subtle glow/glass update on hover */
+.card:hover,
+.infra-card:hover,
+.stat-card:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.99);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.neon-hover:hover,
+.neon-text,
+.neon-border {
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
